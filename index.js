@@ -15,6 +15,21 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
+User.findByIdAndDelete("67b5ebb999b6c4ebed831ab1").then((res) => {
+  console.log(res);
+});
+
+
+/*
+User.updateMany({age: {$gt: 48}},{age:55})
+  .then((res)=>{
+    console.log(res);
+  })
+.catch((err)=>{
+  console.log(err);
+})
+
+
 User.findOne({_id:"67b5eb136a107dbf62257336"})
 .then((res) =>{
   console.log(res);
@@ -22,7 +37,7 @@ User.findOne({_id:"67b5eb136a107dbf62257336"})
 .catch((err) => {console.log(err);
 });
 
-/*
+
 User.insertMany([
   {name:"Tony",email:"tony@gmail.com",age:45},
   {name:"Tomy",email:"tomy@gmail.com",age:55},
