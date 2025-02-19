@@ -15,6 +15,14 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
+User.findOne({_id:"67b5eb136a107dbf62257336"})
+.then((res) =>{
+  console.log(res);
+})
+.catch((err) => {console.log(err);
+});
+
+/*
 User.insertMany([
   {name:"Tony",email:"tony@gmail.com",age:45},
   {name:"Tomy",email:"tomy@gmail.com",age:55},
@@ -25,7 +33,7 @@ User.insertMany([
   console.log(res);
 });
 
-/*//const Employee = mongoose.model("Employee", userSchema);
+//const Employee = mongoose.model("Employee", userSchema);
 
 const user1 = new User({
   name:"sam",
